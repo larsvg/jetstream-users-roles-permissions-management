@@ -23,7 +23,7 @@
                     {{ implode(', ', $user->getRoleNames()->toArray()) }}
                 </td>
                 <td class="p-2">
-                    {{ $user->last_activity }}
+                    {{ $user->last_activity ? $user->last_activity->format('d-m-Y H:i') : '-' }}
                 </td>
                 <td>
                     <a href="" class="text-blue-600 hover:text-blue-800 hover:underline">
