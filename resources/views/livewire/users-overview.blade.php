@@ -1,3 +1,9 @@
+@php
+    /**
+     * @var App\Models\User $users
+     */
+@endphp
+
 <div>
     <table class="w-full">
         <tr class=" bg-gray-50 border-b border-t border-gray-200">

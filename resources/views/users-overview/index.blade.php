@@ -1,8 +1,3 @@
-@php
-    /**
-     * @var \App\Models\ObjectDefinition $objectDefinitions
-     */
-@endphp
 
 <x-app-layout>
 
