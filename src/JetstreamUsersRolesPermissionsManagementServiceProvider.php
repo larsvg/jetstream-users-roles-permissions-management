@@ -17,9 +17,9 @@ class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageSer
          */
         $package
             ->name('jetstream-users-roles-permissions-management')
+            ->hasRoute('web')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_jetstream-users-roles-permissions-management_table')
-            ->hasCommand(JetstreamUsersRolesPermissionsManagementCommand::class);
+            ->hasViews('user-management')
+            ->hasMigration('create_jetstream-users-roles-permissions-management_table');
     }
 }
