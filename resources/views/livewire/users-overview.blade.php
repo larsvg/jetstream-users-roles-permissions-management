@@ -4,7 +4,12 @@
      */
 @endphp
 
-<div>
+<div class="flex flex-col gap-4">
+
+    <div class="w-1/2">
+        <x-input id="searchword" placeholder="Search.." class="block mt-1 w-full" type="text" name="searchword" wire:model="searchWord" />
+    </div>
+
     <table class="w-full">
         <tr class=" bg-gray-50 border-b border-t border-gray-200">
             <th class="text-left p-2">
