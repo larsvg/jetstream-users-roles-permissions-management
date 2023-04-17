@@ -16,9 +16,10 @@ class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageSer
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('jetstream-users-roles-permissions-management')
+            ->name('users-management')
             ->hasRoute('web')
             ->hasConfigFile()
+            ->hasTranslations()
             ->hasViews('user-management')
             ->hasMigration('create_jetstream-users-roles-permissions-management_table');
     }

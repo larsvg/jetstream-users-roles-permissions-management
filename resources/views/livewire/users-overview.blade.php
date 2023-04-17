@@ -7,16 +7,16 @@
 <div>
     <table class="w-full">
         <tr class=" bg-gray-50 border-b border-t border-gray-200">
-            <th>
-                {{ __('pages/users-overview.table.name') }}
+            <th class="text-left p-2">
+                {{ __('users-management::pages/users-overview.table.name') }}
             </th>
-            <th>
-                {{ __('pages/users-overview.table.role') }}
+            <th class="text-left p-2">
+                {{ __('users-management::pages/users-overview.table.role') }}
             </th>
-            <th>
-                {{ __('pages/users-overview.table.last_activity') }}
+            <th class="text-left p-2">
+                {{ __('users-management::pages/users-overview.table.last_activity') }}
             </th>
-            <th>
+            <th class="text-left p-2">
 
             </th>
         </tr>
