@@ -15,10 +15,11 @@
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
 
             <form method="POST" action="{{ route('users-overview.update', compact('user')) }}">
+                @method('PUT')
                 @csrf
                 <x-blade-form-section>
                     <x-slot name="title">
-                        {{ __('Todo') }}
+                        {{ __('Role') }}
                     </x-slot>
 
                     <x-slot name="description">
