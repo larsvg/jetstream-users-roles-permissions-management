@@ -37,7 +37,7 @@
                     {{ $user->last_activity ? $user->last_activity->format('d-m-Y H:i') : '-' }}
                 </td>
                 <td>
-                    <a href="" class="text-blue-600 hover:text-blue-800 hover:underline">
+                    <a href="{{ route('users-overview.edit', $user) }}" class="text-blue-600 hover:text-blue-800 hover:underline">
                         {{ __('buttons.details') }}
                     </a>
                 </td>
