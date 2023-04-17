@@ -7,7 +7,7 @@
 <div class="flex flex-col gap-4">
 
     <div class="w-1/2">
-        <x-input id="searchword" placeholder="Search.." class="block mt-1 w-full" type="text" name="searchword" wire:model="searchWord" />
+        <x-input id="searchword" placeholder="{{ __('users-management::pages/users-overview.placeholder.search') }}" class="block mt-1 w-full" type="text" name="searchword" wire:model="searchWord" />
     </div>
 
     <table class="w-full">
