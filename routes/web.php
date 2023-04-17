@@ -26,14 +26,14 @@ Route::get('/test', function () {
 Route::group(['middleware' => config('jetstream.middleware', ['web'])], function () {
 
 
-    //Route::group(['middleware' => ['can:' . PermissionsEnum::VIEW_MAIN_NET_GRAPHS->value]], function () {
+    Route::group(['middleware' => ['can:' . PermissionsEnum::MANAGE_USERS->value]], function () {
 
 
         Route::get('/users-overview', [UsersOverviewController::class, 'index'])
             ->name('users-overview.index');
 
 
-    //});
+    });
 
 
 });

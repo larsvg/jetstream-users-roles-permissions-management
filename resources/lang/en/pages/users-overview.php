@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'               => 'Users overview',
+    'title'               => 'Manage users',
     'table.name'          => 'Name',
     'table.role'          => 'Role',
     'table.last_activity' => 'Last activity',
