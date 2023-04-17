@@ -35,6 +35,9 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::get('/user-overview/{user}/edit', [UsersOverviewController::class, 'edit'])
             ->name('users-overview.edit');
 
+        Route::put('/user-overview/{user}', [UsersOverviewController::class, 'update'])
+            ->name('users-overview.update');
+
 
     });
 
