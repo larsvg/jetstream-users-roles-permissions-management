@@ -23,7 +23,7 @@
                     </x-slot>
 
                     <x-slot name="description">
-                        {{ __('Todo') }}
+                        {{ __('Change user role') }}
                     </x-slot>
 
                     <x-slot name="form">
