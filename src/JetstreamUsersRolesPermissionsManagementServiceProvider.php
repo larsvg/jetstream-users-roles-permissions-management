@@ -2,6 +2,8 @@
 
 namespace Larsvg\JetstreamUsersRolesPermissionsManagement;
 
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\UsersOverview;
+use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Commands\JetstreamUsersRolesPermissionsManagementCommand;
@@ -10,6 +12,8 @@ class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageSer
 {
     public function configurePackage(Package $package): void
     {
+        Livewire::component('users-overview', UsersOverview::class);
+
         /*
          * This class is a Package Service Provider
          *
