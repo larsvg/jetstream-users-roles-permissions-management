@@ -12,8 +12,6 @@ class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageSer
 {
     public function configurePackage(Package $package): void
     {
-        Livewire::component('users-overview', UsersOverview::class);
-
         /*
          * This class is a Package Service Provider
          *
