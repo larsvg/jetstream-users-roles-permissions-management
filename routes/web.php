@@ -1,9 +1,6 @@
 <?php
 
 use App\Enums\PermissionsEnum;
-use App\Http\Controllers\MeterController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Controller\UsersOverviewController;
 
