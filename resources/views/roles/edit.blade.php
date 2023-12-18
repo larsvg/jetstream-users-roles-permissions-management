@@ -46,5 +46,30 @@
             </x-blade-form-section>
         </div>
 
+
+
+        <div>
+            <x-blade-form-section>
+                <x-slot name="title">
+                    {{ __('Permissions') }}
+                </x-slot>
+
+                <x-slot name="description">
+                    {{ __('Change user permissions') }}
+                </x-slot>
+
+                <x-slot name="form">
+                    <div class="col-span-6 sm:col-span-4">
+                        <x-label for="role" value="{{ __('') }}" />
+
+
+                        @livewire('role-permissions', ['role' => $role])
+
+                    </div>
+
+                </x-slot>
+            </x-blade-form-section>
+        </div>
+
     </div>
 </x-app-layout>

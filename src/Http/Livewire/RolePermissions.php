@@ -4,22 +4,24 @@ namespace Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire;
 
 use App\Models\User;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Models\ModelHasPermissions;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Models\RoleHasPermissions;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
-class UserPermissions extends Component
+class RolePermissions extends Component
 {
-    public User $user;
+    public Role $role;
 
-    public function mount(User $user): void
+    public function mount(Role $role): void
     {
-        $this->user = $user;
+        $this->role = $role;
     }
 
     public function render()
     {
-        return view('user-management::livewire.user-permissions', [
-            'user'        => $this->user,
+        return view('user-management::livewire.role-permissions', [
+            'role'        => $this->role,
             'permissions' => Permission::get(),
         ]);
     }
@@ -30,14 +32,14 @@ class UserPermissions extends Component
         $permission = Permission::where('name', $permissionName)->first();
         if ($permission) {
 
-            $exists = ModelHasPermissions::where('model_id', $this->user->id)
+            $exists = RoleHasPermissions::where('role_id', $this->role->id)
                 ->where('permission_id', $permission->id)
                 ->exists();
 
             if ($exists) {
-                $this->user->revokePermissionTo($permission);
+                $this->role->revokePermissionTo($permission);
             } else {
-                $this->user->givePermissionTo($permission);
+                $this->role->givePermissionTo($permission);
             }
         }
     }
