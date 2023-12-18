@@ -1,18 +1,27 @@
-<div>
-    @foreach($permissions as $permission)
+@php
+/**
+ * @var \App\Models\User $user
+ * @var Spatie\Permission\Models\Permission $permissions
+ */
+@endphp
 
-        <div>
+<div>
+
+    @foreach($permissions as $permission)
+        <div wire:click="togglePermission('{{ $permission->name }}')">
             @php
-                $checked = $user->hasPermissionTo($permission->name)
+                $checked = \Larsvg\JetstreamUsersRolesPermissionsManagement\Models\ModelHasPermissions::where('model_id', $user->id)
+                    ->where('permission_id', $permission->id)
+                    ->exists();
             @endphp
 
-            <x-checkbox
-                name="{{ $permission->name }}"
-                value="{{ $permission->name }}"
-                label="{{ $permission->name }}"
-                labelClass="{{ $checked ? '' : 'text-red-500 strikethrough' }}"
-                :checked="$checked"
-                />
+            <input type="checkbox"  class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                   @if($checked) checked @endif
+            >
+
+            <label class="{{ $checked ? '' : 'text-red-700 line-through' }}">
+                {{ $permission->name }}
+            </label>
         </div>
 
     @endforeach
