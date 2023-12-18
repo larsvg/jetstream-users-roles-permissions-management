@@ -2,6 +2,7 @@
 
 use App\Enums\PermissionsEnum;
 use Illuminate\Support\Facades\Route;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Controller\RolesController;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Controller\UsersOverviewController;
 
 /*
@@ -34,6 +35,9 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
 
         Route::put('/user-overview/{user}', [UsersOverviewController::class, 'update'])
             ->name('users-overview.update');
+
+        Route::get('/roles', [RolesController::class, 'index'])
+            ->name('roles.index');
 
 
     });
