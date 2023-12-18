@@ -42,7 +42,17 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::get('/roles/{role}', [RolesController::class, 'show'])
             ->name('roles.show');
 
+        Route::get('/roles/{role}/edit', [RolesController::class, 'edit'])
+            ->name('roles.edit');
 
+        Route::put('/roles/{role}/update', [RolesController::class, 'update'])
+            ->name('roles.update');
+
+        Route::get('/roles/create', [RolesController::class, 'create'])
+            ->name('roles.create');
+
+        Route::get('/roles/store', [RolesController::class, 'store'])
+            ->name('roles.store');
 
     });
 

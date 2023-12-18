@@ -1,3 +1,8 @@
+@php
+/**
+ * @var Spatie\Permission\Models\Role $roles
+ */
+@endphp
 
 <x-app-layout>
 
@@ -21,7 +26,7 @@
                                         {{ $role->name }}
                                     </td>
                                     <td>
-                                        <a href="{{ route('roles.show', $role) }}" class="text-blue-600 hover:text-blue-800 hover:underline">
+                                        <a href="{{ route('roles.edit', $role) }}" class="text-blue-600 hover:text-blue-800 hover:underline">
                                             {{ __('buttons.details') }}
                                         </a>
                                     </td>
