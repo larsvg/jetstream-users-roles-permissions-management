@@ -30,6 +30,7 @@ class RolesController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $role = Role::create(['name' => $request->name]);
+        $request->session()->flash('success', __('notifications.saved'));
         return redirect()->route('roles.index');
     }
 
@@ -41,6 +42,7 @@ class RolesController extends Controller
     public function update(Request $request, Role $role): RedirectResponse
     {
         $role->update(['name' => $request->name]);
+        $request->session()->flash('success', __('notifications.saved'));
         return redirect()->route('roles.index');
     }
 }

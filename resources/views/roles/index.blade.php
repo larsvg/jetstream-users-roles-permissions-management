@@ -25,7 +25,7 @@
                                     <td class="p-2">
                                         {{ $role->name }}
                                     </td>
-                                    <td>
+                                    <td class="text-right p-2">
                                         <a href="{{ route('roles.edit', $role) }}" class="text-blue-600 hover:text-blue-800 hover:underline">
                                             {{ __('buttons.details') }}
                                         </a>
