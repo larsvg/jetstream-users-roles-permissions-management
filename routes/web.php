@@ -36,8 +36,11 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::put('/user-overview/{user}', [UsersOverviewController::class, 'update'])
             ->name('users-overview.update');
 
-        Route::get('/roles', [RolesController::class, 'index'])
-            ->name('roles.index');
+        Route::get('/roles/create', [RolesController::class, 'create'])
+            ->name('roles.create');
+
+        Route::post('/roles/store', [RolesController::class, 'store'])
+            ->name('roles.store');
 
         Route::get('/roles/{role}', [RolesController::class, 'show'])
             ->name('roles.show');
@@ -48,11 +51,8 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::put('/roles/{role}/update', [RolesController::class, 'update'])
             ->name('roles.update');
 
-        Route::get('/roles/create', [RolesController::class, 'create'])
-            ->name('roles.create');
-
-        Route::get('/roles/store', [RolesController::class, 'store'])
-            ->name('roles.store');
+        Route::get('/roles', [RolesController::class, 'index'])
+            ->name('roles.index');
 
     });
 

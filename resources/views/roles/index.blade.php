@@ -45,5 +45,12 @@
             </div>
         </div>
 
+        <div>
+            <x-a href="{{ route('roles.create') }}">
+
+                {{ __('users-management::pages/roles-create.title') }}
+
+            </x-a>
+        </div>
     </div>
 </x-app-layout>
