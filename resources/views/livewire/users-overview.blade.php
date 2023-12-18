@@ -24,6 +24,9 @@
                             {{ __('users-management::pages/users-overview.table.name') }}
                         </th>
                         <th class="text-left p-2">
+                            {{ __('users-management::pages/users-overview.table.company-name') }}
+                        </th>
+                        <th class="text-left p-2">
                             {{ __('users-management::pages/users-overview.table.role') }}
                         </th>
                         <th class="text-left p-2">
@@ -37,6 +40,9 @@
                         <tr class="border-b border-gray-200 odd:bg-gray-100 hover:bg-yellow-50 transition-all">
                             <td class="p-2">
                                 {{ $user->name }}
+                            </td>
+                            <td class="p-2">
+                                {{ $user->company_name }}
                             </td>
                             <td class="p-2">
                                 {{ implode(', ', $user->getRoleNames()->toArray()) }}

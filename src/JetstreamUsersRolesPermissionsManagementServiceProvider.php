@@ -23,6 +23,6 @@ class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageSer
             ->hasConfigFile()
             ->hasTranslations()
             ->hasViews('user-management')
-            ->hasMigration('create_jetstream-users-roles-permissions-management_table');
+            ->hasMigration('2023_12_18_111909_add_company_name_to_users');
     }
 }

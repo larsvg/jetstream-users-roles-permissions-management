@@ -41,6 +41,29 @@
                             <x-input-error for="role" class="mt-2" />
                         </div>
 
+
+                        <div class="col-span-6 sm:col-span-4">
+                            <x-label for="role" value="{{ __('users-management::pages/users-overview.table.company-name') }}" />
+
+                            <x-input
+                                name="company_name"
+                                :value="old('company_name', $user->company_name)"
+                            />
+
+                            <x-input-error for="company_name" class="mt-2" />
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-4">
+                            <x-label for="role" value="{{ __('users-management::pages/users-overview.table.email') }}" />
+
+                            <x-input
+                                name="email"
+                                :value="old('email', $user->email)"
+                            />
+
+                            <x-input-error for="email" class="mt-2" />
+                        </div>
+
                     </x-slot>
 
                     <x-slot name="actions">

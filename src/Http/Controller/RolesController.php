@@ -31,7 +31,7 @@ class RolesController extends Controller
     {
         $role = Role::create(['name' => $request->name]);
         $request->session()->flash('success', __('notifications.saved'));
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.update', $role);
     }
 
     public function edit(Role $role)

@@ -29,6 +29,10 @@ class UsersOverviewController extends Controller
 
     public function update(User $user, Request $request): RedirectResponse
     {
+        $user->company_name = $request->get('company_name');
+        $user->email = $request->get('email');
+        $user->save();
+
         $role = Role::where('id', $request->get('role'))->firstOrFail();
         $user->removeRole($user->roles->first());
         $user->assignRole($role);
