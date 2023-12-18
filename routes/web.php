@@ -39,6 +39,10 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::get('/roles', [RolesController::class, 'index'])
             ->name('roles.index');
 
+        Route::get('/roles/{role}', [RolesController::class, 'show'])
+            ->name('roles.show');
+
+
 
     });
 
