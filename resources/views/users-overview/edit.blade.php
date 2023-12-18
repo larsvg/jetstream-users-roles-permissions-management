@@ -19,26 +19,24 @@
                 @csrf
                 <x-blade-form-section>
                     <x-slot name="title">
-                        {{ __('Role') }}
+                        {{ __('users-management::pages/users-overview.user.settings') }}
                     </x-slot>
 
                     <x-slot name="description">
-                        {{ __('Change user role') }}
                     </x-slot>
 
                     <x-slot name="form">
                         <div class="col-span-6 sm:col-span-4">
-                            <x-label for="role" value="{{ __('Role') }}" />
+                            <x-label for="name" value="{{ __('users-management::pages/users-overview.table.name') }}" />
 
-                            <x-select
-                                id="role"
-                                name="role"
-                                class="dual-listbox"
-                                :options="$roles"
-                                :selected="$selected"
+                            <x-input
+                                type="text"
+                                id="name"
+                                name="name"
+                                :value="old('name', $user->name)"
                             />
 
-                            <x-input-error for="role" class="mt-2" />
+                            <x-input-error for="name" class="mt-2" />
                         </div>
 
 
@@ -66,6 +64,20 @@
                             />
 
                             <x-input-error for="email" class="mt-2" />
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-4">
+                            <x-label for="role" value="{{ __('Role') }}" />
+
+                            <x-select
+                                id="role"
+                                name="role"
+                                class="dual-listbox"
+                                :options="$roles"
+                                :selected="$selected"
+                            />
+
+                            <x-input-error for="role" class="mt-2" />
                         </div>
 
                     </x-slot>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Requests\UserUpdateRequest;
 use Spatie\Permission\Models\Role;
 
 class UsersOverviewController extends Controller
@@ -27,10 +28,11 @@ class UsersOverviewController extends Controller
         return view('user-management::users-overview.edit', compact('user', 'roles', 'selected'));
     }
 
-    public function update(User $user, Request $request): RedirectResponse
+    public function update(User $user, UserUpdateRequest $request): RedirectResponse
     {
+        $user->name         = $request->get('name');
         $user->company_name = $request->get('company_name');
-        $user->email = $request->get('email');
+        $user->email        = $request->get('email');
         $user->save();
 
         $role = Role::where('id', $request->get('role'))->firstOrFail();

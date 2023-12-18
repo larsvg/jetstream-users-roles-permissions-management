@@ -7,4 +7,5 @@ return [
     'table.company-name'  => 'Bedrijfsnaam',
     'table.email'         => 'E-mail',
     'placeholder.search'  => 'Zoek op naam of e-mail',
+    'user.settings'       => 'Gebruikers instellingen',
 ];
