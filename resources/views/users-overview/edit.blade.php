@@ -43,9 +43,10 @@
 
 
                         <div class="col-span-6 sm:col-span-4">
-                            <x-label for="role" value="{{ __('users-management::pages/users-overview.table.company-name') }}" />
+                            <x-label for="company_name" value="{{ __('users-management::pages/users-overview.table.company-name') }}" />
 
                             <x-input
+                                id="company_name"
                                 name="company_name"
                                 :value="old('company_name', $user->company_name)"
                             />
@@ -54,9 +55,10 @@
                         </div>
 
                         <div class="col-span-6 sm:col-span-4">
-                            <x-label for="role" value="{{ __('users-management::pages/users-overview.table.email') }}" />
+                            <x-label for="email" value="{{ __('users-management::pages/users-overview.table.email') }}" />
 
                             <x-input
+                                id="email"
                                 name="email"
                                 :value="old('email', $user->email)"
                             />
