@@ -46,6 +46,7 @@
                             <x-label for="company_name" value="{{ __('users-management::pages/users-overview.table.company-name') }}" />
 
                             <x-input
+                                type="text"
                                 id="company_name"
                                 name="company_name"
                                 :value="old('company_name', $user->company_name)"
@@ -58,6 +59,7 @@
                             <x-label for="email" value="{{ __('users-management::pages/users-overview.table.email') }}" />
 
                             <x-input
+                                type="email"
                                 id="email"
                                 name="email"
                                 :value="old('email', $user->email)"
