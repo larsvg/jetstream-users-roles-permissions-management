@@ -20,7 +20,7 @@
             >
 
             <label class="{{ $checked ? '' : 'text-red-700 line-through' }}">
-                {{ $permission->name }}
+                {{ __($permission->name) }}
             </label>
         </div>
 

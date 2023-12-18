@@ -3,6 +3,7 @@
 namespace Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire;
 
 use App\Models\User;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Models\ModelHasPermissions;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 
@@ -29,7 +30,7 @@ class UserPermissions extends Component
         $permission = Permission::where('name', $permissionName)->first();
         if ($permission) {
 
-            $exists = \Larsvg\JetstreamUsersRolesPermissionsManagement\Models\ModelHasPermissions::where('model_id', $this->user->id)
+            $exists = ModelHasPermissions::where('model_id', $this->user->id)
                 ->where('permission_id', $permission->id)
                 ->exists();
 
@@ -38,9 +39,6 @@ class UserPermissions extends Component
             } else {
                 $this->user->givePermissionTo($permission);
             }
-
-
-
         }
     }
 
