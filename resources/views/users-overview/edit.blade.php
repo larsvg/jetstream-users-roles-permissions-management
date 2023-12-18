@@ -11,8 +11,8 @@
         {{ Breadcrumbs::render('profile.show') }}
     </x-slot>
 
-    <div>
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8 flex flex-col gap-10">
+        <div>
 
             <form method="POST" action="{{ route('users-overview.update', compact('user')) }}">
                 @method('PUT')
@@ -51,9 +51,30 @@
                     </x-slot>
                 </x-blade-form-section>
             </form>
-
-
-
         </div>
+
+        <div>
+            <x-blade-form-section>
+                <x-slot name="title">
+                    {{ __('Permissions') }}
+                </x-slot>
+
+                <x-slot name="description">
+                    {{ __('Change user permissions') }}
+                </x-slot>
+
+                <x-slot name="form">
+                    <div class="col-span-6 sm:col-span-4">
+                        <x-label for="role" value="{{ __('') }}" />
+
+
+                        @livewire('user-permissions', ['user' => $user])
+
+                    </div>
+
+                </x-slot>
+            </x-blade-form-section>
+        </div>
+
     </div>
 </x-app-layout>
