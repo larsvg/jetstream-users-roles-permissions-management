@@ -8,4 +8,7 @@ return [
     'table.email'         => 'E-mail',
     'placeholder.search'  => 'Search on name or e-mail',
     'user.settings'       => 'User settings',
+    'btn.invite'          => 'Invite',
+    'invite.label.email'  => 'Add new user',
+    'invite.label.role'   => 'Role',
 ];

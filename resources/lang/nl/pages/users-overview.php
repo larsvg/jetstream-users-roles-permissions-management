@@ -8,4 +8,7 @@ return [
     'table.email'         => 'E-mail',
     'placeholder.search'  => 'Zoek op naam of e-mail',
     'user.settings'       => 'Gebruikers instellingen',
+    'btn.invite'          => 'Uitnodigen',
+    'invite.label.email'  => 'Nieuwe gebruiker toevoegen',
+    'invite.label.role'   => 'Rol',
 ];
