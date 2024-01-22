@@ -8,5 +8,7 @@
         </x-page-title>
 
         @livewire('users-overview')
+
+        @livewire('user-invite')
     </div>
 </x-app-layout>
