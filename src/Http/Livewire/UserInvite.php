@@ -49,7 +49,7 @@ class UserInvite extends Component
         Mail::to([$this->email])
             ->send(new UserInvitation($this->email, $role));
 
-        request()->session()->flash('success', __('notifications.sent'));
+        request()->session()->flash('success', __('users-management::pages/users-overview.notification.sent'));
 
         return redirect()->route('users-overview.index');
     }

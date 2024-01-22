@@ -11,4 +11,5 @@ return [
     'btn.invite'          => 'Invite',
     'invite.label.email'  => 'Add new user',
     'invite.label.role'   => 'Role',
+    'notification.sent'  => 'Invitation sent',
 ];

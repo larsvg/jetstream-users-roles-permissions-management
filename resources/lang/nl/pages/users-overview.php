@@ -11,4 +11,5 @@ return [
     'btn.invite'          => 'Uitnodigen',
     'invite.label.email'  => 'Nieuwe gebruiker toevoegen',
     'invite.label.role'   => 'Rol',
+    'notification.sent'   => 'Uitnodiging verstuurd',
 ];
