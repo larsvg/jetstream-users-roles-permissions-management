@@ -7,15 +7,15 @@
 @endphp
 <div class="flex flex-col gap-8">
 
-    <form class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 flex gap-2 items-center" wire:submit.prevent="submit">
+    <form class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8 flex gap-2 items-end" wire:submit.prevent="submit">
         <div class="w-full">
+            <x-label for="email" value="Nieuwe gebruiker toevoegen" />
             <x-input id="email" placeholder="E-mail adres" class="block mt-1 w-full" type="email" name="email" wire:model="email" />
             <x-input-error for="email" class="mt-2" />
         </div>
 
-
-
         <div class="col-span-6 sm:col-span-4">
+            <x-label for="role" value="Rol" />
             <x-select
                 id="role"
                 name="role"
@@ -25,7 +25,7 @@
             <x-input-error for="role" class="mt-2" />
         </div>
 
-        <x-button class="ml-4" type="submit">
+        <x-button class="ml-4 mb-1" type="submit">
             {{ __('Invite') }}
         </x-button>
 

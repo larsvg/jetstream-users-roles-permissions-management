@@ -23,7 +23,7 @@ class UserInvite extends Component
 
     public function mount()
     {
-        $this->role = Role::first()->id;
+        $this->role = Role::orderBy('id', 'desc')->first()->id;
     }
 
     public function render()
@@ -48,6 +48,10 @@ class UserInvite extends Component
 
         Mail::to([$this->email])
             ->send(new UserInvitation($this->email, $role));
+
+        request()->session()->flash('success', __('notifications.sent'));
+
+        return redirect()->route('users-overview.index');
     }
 
 }
