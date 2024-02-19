@@ -128,7 +128,7 @@
                     <div class="col-span-6 sm:col-span-4">
                         <x-label for="role" value="{{ __('') }}" />
 
-                        @livewire('mail-recipients', ['user' => $user])
+                        @livewire('recipients-by-user', ['user' => $user])
 
                     </div>
 

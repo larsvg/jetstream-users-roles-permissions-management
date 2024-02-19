@@ -72,7 +72,7 @@
                     <x-label for="role" value="{{ __('') }}" />
 
 
-                    @livewire('mail-receivers', ['mail' => $mail])
+                    @livewire('recipients-by-mailing', ['mail' => $mail])
 
                 </div>
 

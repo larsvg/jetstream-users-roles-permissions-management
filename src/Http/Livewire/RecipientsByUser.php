@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
-class MailRecipients extends Component
+class RecipientsByUser extends Component
 {
     public User $user;
 
@@ -22,7 +22,7 @@ class MailRecipients extends Component
         $mails = Mail::get();
         $user = $this->user;
 
-        return view('user-management::livewire.mail-recipients', compact('mails', 'user'));
+        return view('user-management::livewire.recipients-by-user', compact('mails', 'user'));
     }
 
     public function toggleRecipient(User $user, Mail $mail)

@@ -7,7 +7,7 @@ use App\Models\MailRecipients;
 use App\Models\User;
 use Livewire\Component;
 
-class MailReceivers extends Component
+class RecipientsByMailing extends Component
 {
     public Mail $mail;
 
@@ -21,7 +21,7 @@ class MailReceivers extends Component
         $users = User::all();
         $mail = $this->mail;
 
-        return view('user-management::livewire.mail-receivers', compact('users', 'mail'));
+        return view('user-management::livewire.recipients-by-mailing', compact('users', 'mail'));
     }
 
     public function toggleRecipient(User $user, Mail $mail)

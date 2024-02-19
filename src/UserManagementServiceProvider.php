@@ -2,8 +2,8 @@
 
 namespace Larsvg\JetstreamUsersRolesPermissionsManagement;
 
-use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\MailReceivers;
-use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\MailRecipients;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\RecipientsByMailing;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\RecipientsByUser;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -23,13 +23,15 @@ class UserManagementServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasTranslations()
             ->hasViews('user-management')
-            ->hasMigration('2023_12_18_111909_add_company_name_to_users');
+            ->hasMigration('2023_12_18_111909_add_company_name_to_users')
+            ->hasMigration('2024_02_12_081922_create_mails_table')
+            ->hasMigration('2024_02_12_082649_create_mail_recipients_table');
     }
 
     public function boot() {
         parent::boot();
 
-        Livewire::component('mail-recipients', MailRecipients::class);
-        Livewire::component('mail-receivers', MailReceivers::class);
+        Livewire::component('recipients-by-user', RecipientsByUser::class);
+        Livewire::component('recipients-by-mailing', RecipientsByMailing::class);
     }
 }
