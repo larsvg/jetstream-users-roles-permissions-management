@@ -4,7 +4,7 @@ namespace Larsvg\JetstreamUsersRolesPermissionsManagement\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Larsvg\JetstreamUsersRolesPermissionsManagement\UserManagementServiceProvider;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\JetstreamUsersRolesPermissionsManagementServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -20,7 +20,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            UserManagementServiceProvider::class,
+            JetstreamUsersRolesPermissionsManagementServiceProvider::class,
         ];
     }
 

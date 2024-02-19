@@ -2,13 +2,15 @@
 
 namespace Larsvg\JetstreamUsersRolesPermissionsManagement;
 
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\ModelHasProjectAccess;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\RecipientsByMailing;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\RecipientsByUser;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\RoleHasProjectAccess;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class UserManagementServiceProvider extends PackageServiceProvider
+class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -33,5 +35,7 @@ class UserManagementServiceProvider extends PackageServiceProvider
 
         Livewire::component('recipients-by-user', RecipientsByUser::class);
         Livewire::component('recipients-by-mailing', RecipientsByMailing::class);
+        Livewire::component('role-has-project-access', RoleHasProjectAccess::class);
+        Livewire::component('model-has-project-access', ModelHasProjectAccess::class);
     }
 }
