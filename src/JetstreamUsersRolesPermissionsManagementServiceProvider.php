@@ -2,6 +2,7 @@
 
 namespace Larsvg\JetstreamUsersRolesPermissionsManagement;
 
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\MailRecipients;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\UsersOverview;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
@@ -24,5 +25,11 @@ class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageSer
             ->hasTranslations()
             ->hasViews('user-management')
             ->hasMigration('2023_12_18_111909_add_company_name_to_users');
+    }
+
+    public function boot() {
+        parent::boot();
+
+        Livewire::component('mail-recipients', MailRecipients::class);
     }
 }

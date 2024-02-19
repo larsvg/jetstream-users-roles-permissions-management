@@ -115,5 +115,26 @@
             </x-blade-form-section>
         </div>
 
+        <div>
+            <x-blade-form-section>
+                <x-slot name="title">
+                    {{ __('Mailings') }}
+                </x-slot>
+
+                <x-slot name="description">
+                </x-slot>
+
+                <x-slot name="form">
+                    <div class="col-span-6 sm:col-span-4">
+                        <x-label for="role" value="{{ __('') }}" />
+
+                        @livewire('mail-recipients', ['user' => $user])
+
+                    </div>
+
+                </x-slot>
+            </x-blade-form-section>
+        </div>
+
     </div>
 </x-app-layout>
