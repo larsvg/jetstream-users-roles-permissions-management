@@ -2,14 +2,13 @@
 
 namespace Larsvg\JetstreamUsersRolesPermissionsManagement;
 
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\MailReceivers;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\MailRecipients;
-use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Livewire\UsersOverview;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Larsvg\JetstreamUsersRolesPermissionsManagement\Commands\JetstreamUsersRolesPermissionsManagementCommand;
 
-class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageServiceProvider
+class UserManagementServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -31,5 +30,6 @@ class JetstreamUsersRolesPermissionsManagementServiceProvider extends PackageSer
         parent::boot();
 
         Livewire::component('mail-recipients', MailRecipients::class);
+        Livewire::component('mail-receivers', MailReceivers::class);
     }
 }

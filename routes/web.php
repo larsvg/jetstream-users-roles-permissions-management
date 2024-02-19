@@ -2,6 +2,7 @@
 
 use App\Enums\PermissionsEnum;
 use Illuminate\Support\Facades\Route;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Controller\MailsController;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Controller\RolesController;
 use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Controller\UsersOverviewController;
 
@@ -56,6 +57,19 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
 
     });
 
+
+    Route::group(['middleware' => ['can:'.PermissionsEnum::MANAGE_MAILINGS->value]], function () {
+
+        Route::get('/mailings', [MailsController::class, 'index'])
+            ->name('mailings.index');
+
+        Route::get('/mailings/{mail}/edit', [MailsController::class, 'edit'])
+            ->name('mailings.edit');
+
+        Route::put('/mailings/{mail}/update', [MailsController::class, 'update'])
+            ->name('mailings.update');
+
+    });
 
 });
 
