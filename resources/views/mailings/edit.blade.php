@@ -46,19 +46,19 @@
                         </div>
 
                         <div class="flex flex-col gap-2">
-                            <x-label for="body" value="{{ __('users-management::pages/mailings/update.field.custom.receivers') }}" />
+                            <x-label for="body" value="{{ __('users-management::pages/mailings/update.field.custom.recipients') }}" />
 
                             @php
                             $example = "example@mail.nl\nexample@mail.com";
                             @endphp
 
-                            <x-textarea id="receivers" class="block mt-1 w-full" type="text" name="receivers" rows="4" placeholder="{{ $example }}">{{ old('receivers', $mail->receivers) }}</x-textarea>
+                            <x-textarea id="custom_recipients" class="block mt-1 w-full" type="text" name="custom_recipients" rows="4" placeholder="{{ $example }}">{{ old('custom_recipients', $mail->custom_recipients) }}</x-textarea>
 
                             <span class="block font-medium text-xs text-gray-700">
-                                {{ __('users-management::pages/mailings/update.field.custom.receivers.description') }}
+                                {{ __('users-management::pages/mailings/update.field.custom.recipients.description') }}
                             </span>
 
-                            <x-input-error for="receivers" />
+                            <x-input-error for="custom_recipients" />
                         </div>
 
                         <div class="flex items-center justify-end mt-4">

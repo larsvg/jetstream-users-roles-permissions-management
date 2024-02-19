@@ -6,6 +6,6 @@ return [
     'field.body'                          => 'Inhoud',
     'field.recipients'                    => 'Ontvangers',
     'field.task.name'                     => 'Taak',
-    'field.custom.receivers'              => "Email adressen ontvangers zonder account",
-    'field.custom.receivers.description' => "(mailadressen scheiden per regel)",
+    'field.custom.recipients'             => "Email adressen ontvangers zonder account",
+    'field.custom.recipients.description' => "(mailadressen scheiden per regel)",
 ];
