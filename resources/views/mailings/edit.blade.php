@@ -45,6 +45,22 @@
                             <x-input-error for="task_name" />
                         </div>
 
+                        <div class="flex flex-col gap-2">
+                            <x-label for="body" value="{{ __('users-management::pages/mailings/update.field.custom.receivers') }}" />
+
+                            @php
+                            $example = "example@mail.nl\nexample@mail.com";
+                            @endphp
+
+                            <x-textarea id="receivers" class="block mt-1 w-full" type="text" name="receivers" rows="4" placeholder="{{ $example }}">{{ old('receivers', $mail->receivers) }}</x-textarea>
+
+                            <span class="block font-medium text-xs text-gray-700">
+                                {{ __('users-management::pages/mailings/update.field.custom.receivers.description') }}
+                            </span>
+
+                            <x-input-error for="receivers" />
+                        </div>
+
                         <div class="flex items-center justify-end mt-4">
                             <x-button class="ml-4">
                                 {{ __('Save') }}
