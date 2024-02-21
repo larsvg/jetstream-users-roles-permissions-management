@@ -56,7 +56,7 @@
     "extra": {
         "laravel": {
             "providers": [
-              "JetstreamUsersRolesPermissionsManagementServiceProvider"
+                "Larsvg\\JetstreamUsersRolesPermissionsManagement\\JetstreamUsersRolesPermissionsManagementServiceProvider"
             ],
             "aliases": {
                 "JetstreamUsersRolesPermissionsManagement": "Larsvg\\JetstreamUsersRolesPermissionsManagement\\Facades\\JetstreamUsersRolesPermissionsManagement"
