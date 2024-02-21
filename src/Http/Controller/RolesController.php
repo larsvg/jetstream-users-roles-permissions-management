@@ -3,9 +3,9 @@
 namespace Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Controller;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Larsvg\JetstreamUsersRolesPermissionsManagement\Http\Requests\RoleStoreRequest;
 use Spatie\Permission\Models\Role;
 
 class RolesController extends Controller
@@ -27,11 +27,11 @@ class RolesController extends Controller
         return view('user-management::roles.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(RoleStoreRequest $request): RedirectResponse
     {
         $role = Role::create(['name' => $request->name]);
         $request->session()->flash('success', __('notifications.saved'));
-        return redirect()->route('roles.update', $role);
+        return redirect()->route('roles.index', $role);
     }
 
     public function edit(Role $role)

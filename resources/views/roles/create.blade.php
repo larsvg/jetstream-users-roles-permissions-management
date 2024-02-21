@@ -24,6 +24,7 @@
                             <div>
                                 <x-label for="name" value="{{ __('users-management::pages/roles-create.field.name') }}" />
                                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                                <x-input-error for="name" class="mt-2" />
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
