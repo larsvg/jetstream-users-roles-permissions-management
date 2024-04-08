@@ -16,6 +16,7 @@ class UsersOverview extends Component
             $users->where('name', 'LIKE', $this->searchWord . '%')
                 ->orWhere('email', 'LIKE', $this->searchWord . '%');
         }
+        $users->orderBy('name');
 
         return view('user-management::livewire.users-overview', [
             'users' => $users->paginate(),
