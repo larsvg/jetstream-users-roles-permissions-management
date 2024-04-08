@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'               => 'Gebruikers beheer',
+    'title'               => 'Gebruikersbeheer',
     'table.name'          => 'Naam',
     'table.role'          => 'Rol',
     'table.last_activity' => 'Laatste activiteit',
